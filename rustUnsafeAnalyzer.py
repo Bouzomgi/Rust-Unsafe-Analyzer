@@ -577,7 +577,8 @@ class FunctionParser:
 
 		return False
 
-
+	
+	# Scans each function using recDrill to find all safety violations made. Returns each violation in a list.
 	def isFunctionSafe(self):
 		functionSafetyObservations = []
 
