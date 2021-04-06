@@ -140,7 +140,7 @@ class Static:
 	__str__ = __repr__	
 
 
-# Outdated
+# For visualization only
 def reduceParseTree(tree):
 	if isinstance(tree, dict):
 		for elem in ['span', 'id', 'suffix', 'tokens', 'is_placeholder', 'vis', 'attrs']:
@@ -401,7 +401,6 @@ class FunctionParser:
 						return Static
 
 
-				# IDK what this block does...
 				elif parsingItem in self.declaredDataTypes:
 					currentVariable = self.declaredDataTypes[parsingItem]
 
@@ -577,7 +576,7 @@ class FunctionParser:
 
 		return False
 
-	
+
 	# Scans each function using recDrill to find all safety violations made. Returns each violation in a list.
 	def isFunctionSafe(self):
 		functionSafetyObservations = []
@@ -628,5 +627,3 @@ def errorReturn(isDeclaredUnsafe, errorType, lo, hi):
 	return [UnsafeTrigger(errorType, isDeclaredUnsafe, lo, hi)]
 
 computeSafety(parseTree)
-
-
